@@ -2,6 +2,20 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
 
-module.exports = nextConfig
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: 'frame-src *; ' // Allow framing from all domains
+          },
+        ],
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;
