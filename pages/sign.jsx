@@ -35,11 +35,11 @@ export async function getStaticProps() {
  
   // load the draft version
   let sbParams = {
-    version: "published", // or 'published'
+    version: "", // or 'published'
   };
  
   const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+  let { data } = await storyblokApi.get(`cdn/stories/${slug}`);
  
   return {
     props: {
