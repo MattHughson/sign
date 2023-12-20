@@ -10,7 +10,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: 'frame-src *; ' // Allow framing from all domains
+            value: 'frame-ancestors *; ' // Allow framing from all domains
           },
         ],
       },
