@@ -12,30 +12,31 @@
     "deploy": "node deploy.mjs"
   },
   "dependencies": {
+    "@remotion/bundler": "4.0.79",
     "@remotion/cli": "4.0.79",
     "@remotion/google-fonts": "4.0.79",
-    "@remotion/bundler": "4.0.79",
     "@remotion/lambda": "4.0.79",
     "@remotion/paths": "4.0.79",
     "@remotion/player": "4.0.79",
     "@remotion/shapes": "4.0.79",
-    "next": "13.4.13",
+    "@storyblok/react": "^3.0.0",
+    "next": "^13.5.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remotion": "4.0.79",
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "dotenv": "^16.0.3",
     "@remotion/eslint-config": "4.0.79",
     "@types/node": "18.7.23",
     "@types/react": "18.2.45",
     "@types/react-dom": "18.2.18",
     "@types/web": "^0.0.61",
+    "dotenv": "^16.0.3",
     "eslint": "^8.43.0",
     "eslint-config-next": "^13.4.13",
-    "typescript": "4.8.3",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "typescript": "4.8.3"
   },
   "packageManager": "npm@10.1.0"
 }

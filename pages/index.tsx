@@ -12,12 +12,9 @@ import {
   VIDEO_WIDTH,
 } from "../types/constants";
 import { z } from "zod";
-import { RenderControls } from "../components/RenderControls";
-import { Tips } from "../components/Tips/Tips";
-import { Spacing } from "../components/Spacing";
+
 
 const container: React.CSSProperties = {
-  maxWidth: 768,
   margin: "auto",
   marginBottom: 20,
 };
@@ -33,6 +30,8 @@ const outer: React.CSSProperties = {
 const player: React.CSSProperties = {
   width: "100%",
 };
+
+
 
 const Home: NextPage = () => {
   const [text, setText] = useState<string>(defaultMyCompProps.title);
@@ -64,24 +63,15 @@ const Home: NextPage = () => {
             compositionHeight={VIDEO_HEIGHT}
             compositionWidth={VIDEO_WIDTH}
             style={player}
-            controls
             autoPlay
             loop
           />
         </div>
-        <RenderControls
-          text={text}
-          setText={setText}
-          inputProps={inputProps}
-        ></RenderControls>
-        <Spacing></Spacing>
-        <Spacing></Spacing>
-        <Spacing></Spacing>
-        <Spacing></Spacing>
-        <Tips></Tips>
+     
       </div>
     </div>
   );
 };
 
 export default Home;
+
