@@ -34,7 +34,7 @@ const player: React.CSSProperties = {
 
 
 const Home: NextPage = () => {
-  const [text, setText] = useState<string>(defaultMyCompProps.title);
+ 
 
   const inputProps: z.infer<typeof CompositionProps> = useMemo(() => {
     return {
