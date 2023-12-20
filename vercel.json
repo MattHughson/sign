@@ -2,8 +2,13 @@
   "buildCommand": "node deploy.mjs && next build",
   "headers": [
     {
-      "key": "X-Frame-Options",
-      "value": "SAMEORIGIN"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
     }
   ]
 }
