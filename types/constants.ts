@@ -9,6 +9,8 @@ export const CompositionProps = z.object({
 
 export const defaultMyCompProps: z.infer<typeof CompositionProps> = {
   title: "Next.js and Remotion",
+  image:"test",
+  ringsColour:"teste color"
 };
 
 export const DURATION_IN_FRAMES = 200;
