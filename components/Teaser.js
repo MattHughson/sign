@@ -31,10 +31,10 @@ const Teaser = ({ blok }) => {
 
   return (
   <div {...storyblokEditable(blok)}>
-  
+  {console.log('teaserblok',blok)}
   <Player
   component={Main}
-  inputProps={{title:blok?.headline}}
+  inputProps={{title:blok?.headline, image: "test"}}
   durationInFrames={DURATION_IN_FRAMES}
   fps={VIDEO_FPS}
   compositionHeight={VIDEO_HEIGHT}

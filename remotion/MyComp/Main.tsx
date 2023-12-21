@@ -24,9 +24,11 @@ const logo: React.CSSProperties = {
   alignItems: "center",
 };
 
-export const Main = ({ title }: z.infer<typeof CompositionProps>) => {
+
+export const Main = ({ title, image }: z.infer<typeof CompositionProps>) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+
 
   const transitionStart = 2 * fps;
   const transitionDuration = 1 * fps;
@@ -50,7 +52,16 @@ export const Main = ({ title }: z.infer<typeof CompositionProps>) => {
       <Sequence durationInFrames={transitionStart + transitionDuration}>
         <Rings outProgress={logoOut}></Rings>
         <AbsoluteFill style={logo}>
-          <NextLogo outProgress={logoOut}></NextLogo>
+        <img
+            src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
+            alt="Your Image Alt Text"
+            style={{
+              height: 140,
+              borderRadius: 70,
+              transform: `scale(${1 - logoOut})`,
+            }}
+          />
+          {/* // <NextLogo outProgress={logoOut}></NextLogo> */}
         </AbsoluteFill>
       </Sequence>
       <Sequence from={transitionStart + transitionDuration / 2}>

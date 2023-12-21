@@ -48,7 +48,7 @@ export const Rings: React.FC<{
             <RadialGradient
               key={i}
               radius={height * 0.3 * i}
-              color={interpolateColors(i, [0, 4], ["#fff", "#fff"])}
+              color={interpolateColors(i, [0, 4], ["#00B3B0", "#ffffff"])}
             />
           );
         })

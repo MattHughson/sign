@@ -5,13 +5,14 @@ import Head from "next/head";
 import {
   getStoryblokApi,
   StoryblokComponent,
-  storyblokEditable,
   useStoryblokState
 } from "@storyblok/react";
 
 export default function Home({ story, locales, locale, defaultLocale, preview, data }) {
   
   const newStory = useStoryblokState(story);
+
+  console.log(newStory,'state',newStory.content)
   
   if (!newStory.content) {
     return <div>Loading...</div>;
@@ -31,12 +32,12 @@ export default function Home({ story, locales, locale, defaultLocale, preview, d
 }
 
  
-export async function getStaticProps() {
-  // home is the default slug for the homepage in Storyblok
+export async function getStaticProps({preview}) {
+
   let slug = "home";
- 
+
   let sbParams = {
-    version: "draft",
+    version: preview ? "draft" : 'published',
   };
  
   const storyblokApi = getStoryblokApi();
@@ -47,6 +48,7 @@ export async function getStaticProps() {
       data: data,
       story: data ? data.story : false,
       key: data ? data.story.id : false,
+      preview: preview || false
     },
   };
 }

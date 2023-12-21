@@ -3,6 +3,8 @@ export const COMP_NAME = "MyComp";
 
 export const CompositionProps = z.object({
   title: z.string(),
+  image:z.string(),
+  ringsColour:z.string(),
 });
 
 export const defaultMyCompProps: z.infer<typeof CompositionProps> = {
