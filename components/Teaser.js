@@ -12,7 +12,7 @@ import {
 } from "../types/constants";
  
 const Teaser = ({ blok }) => {
-  console.log('blok component', blok)
+  
   // const [text, setText] = useState();
   
   // useEffect(() => {
