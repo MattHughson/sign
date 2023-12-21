@@ -7,7 +7,6 @@ import {
   useVideoConfig,
 } from "remotion";
 import { CompositionProps } from "../../types/constants";
-import { NextLogo } from "./NextLogo";
 import { loadFont, fontFamily } from "@remotion/google-fonts/Inter";
 import React, { useMemo } from "react";
 import { Rings } from "./Rings";
