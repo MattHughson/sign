@@ -24,7 +24,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/Teaser.js", "pages/sign.js"  ],
   "exclude": [
     "node_modules"
   ]

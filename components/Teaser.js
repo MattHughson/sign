@@ -12,25 +12,29 @@ import {
 } from "../types/constants";
  
 const Teaser = ({ blok }) => {
-  const [text, setText] = useState();
-  useEffect(() => {
-    setText(blok?.headline)
-  }, [])
+  console.log('blok component', blok)
+  // const [text, setText] = useState();
+  
+  // useEffect(() => {
+  
+  //   setText(blok?.headline)
+  // }, [text])
+
   
 
-  const inputProps = useMemo(() => {
-    console.log()
-    return {
-      title: text,
-    };
-  }, [text]);
+  // const inputProps = useMemo(() => {
+  //   console.log()
+  //   return {
+  //     title: text,
+  //   };
+  // }, [text]);
 
   return (
   <div {...storyblokEditable(blok)}>
   
   <Player
   component={Main}
-  inputProps={inputProps}
+  inputProps={{title:blok?.headline}}
   durationInFrames={DURATION_IN_FRAMES}
   fps={VIDEO_FPS}
   compositionHeight={VIDEO_HEIGHT}

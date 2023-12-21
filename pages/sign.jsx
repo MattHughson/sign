@@ -5,15 +5,17 @@ import Head from "next/head";
 import {
   getStoryblokApi,
   StoryblokComponent,
+  storyblokEditable,
+  useStoryblokState
 } from "@storyblok/react";
 
-
 export default function Home({ story, locales, locale, defaultLocale, preview, data }) {
-  console.log('data3',data)
-  // story = useStoryblokState(story, {
-  //   resolveRelations: ["popular-articles.articles"],
-  //   language: locale
-  // });
+  
+  const newStory = useStoryblokState(story);
+  
+  if (!newStory.content) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
@@ -22,7 +24,7 @@ export default function Home({ story, locales, locale, defaultLocale, preview, d
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <StoryblokComponent blok={story.content} />
+        <StoryblokComponent blok={newStory.content} />
       
     </div>
   );
@@ -33,10 +35,12 @@ export async function getStaticProps() {
   // home is the default slug for the homepage in Storyblok
   let slug = "home";
  
-
+  let sbParams = {
+    version: "draft",
+  };
  
   const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get(`cdn/stories/${slug}`);
+  let { data } = await storyblokApi.get(`cdn/stories/${slug}`,sbParams);
  
   return {
     props: {
@@ -44,6 +48,5 @@ export async function getStaticProps() {
       story: data ? data.story : false,
       key: data ? data.story.id : false,
     },
-    revalidate: 3600, // revalidate every hour
   };
 }
