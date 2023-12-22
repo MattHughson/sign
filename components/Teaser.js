@@ -34,7 +34,7 @@ const Teaser = ({ blok }) => {
   {console.log('teaserblok',blok)}
   <Player
   component={Main}
-  inputProps={{title:blok?.headline, image: "test"}}
+  inputProps={{title:blok?.headline, image: blok.image.filename, ringsColour: blok.Color.value }}
   durationInFrames={DURATION_IN_FRAMES}
   fps={VIDEO_FPS}
   compositionHeight={VIDEO_HEIGHT}

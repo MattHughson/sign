@@ -24,7 +24,7 @@ const logo: React.CSSProperties = {
 };
 
 
-export const Main = ({ title, image }: z.infer<typeof CompositionProps>) => {
+export const Main = ({ title, image, ringsColour }: z.infer<typeof CompositionProps>) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -52,7 +52,7 @@ export const Main = ({ title, image }: z.infer<typeof CompositionProps>) => {
         <Rings outProgress={logoOut}></Rings>
         <AbsoluteFill style={logo}>
         <img
-            src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
+            src={image}
             alt="Your Image Alt Text"
             style={{
               height: 140,
