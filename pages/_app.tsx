@@ -1,12 +1,14 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import Teaser from '../components/Teaser'
 import Page from '../components/Page'
+import Video from '../components/Video'
 
 const components = {
   // feature: Feature,
   // grid: Grid,
   teaser: Teaser,
   page: Page,
+  video: Video,
   // hero: Hero,
   // "all-articles": AllArticles,
   // article: Article,
@@ -16,7 +18,7 @@ const components = {
 };
 
 storyblokInit({
-  accessToken: "X8SQSjMXabCbQifGubULMAtt",
+  accessToken: "IR1Lj26hQLt6Dy9NJWKq7gtt",
 
   // apiOptions: {
   //   region: "eu", 

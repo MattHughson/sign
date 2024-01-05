@@ -14,9 +14,6 @@ import { TextFade } from "./TextFade";
 
 loadFont();
 
-const container: React.CSSProperties = {
-  backgroundColor: "white",
-};
 
 const logo: React.CSSProperties = {
   justifyContent: "center",
@@ -27,7 +24,11 @@ const logo: React.CSSProperties = {
 export const Main = ({ title, image, ringsColour }: z.infer<typeof CompositionProps>) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-
+  console.log('player', ringsColour)
+  
+  const container: React.CSSProperties = {
+    backgroundColor: ringsColour,
+  };
 
   const transitionStart = 2 * fps;
   const transitionDuration = 1 * fps;
